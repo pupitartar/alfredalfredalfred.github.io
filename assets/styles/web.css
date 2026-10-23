@@ -1,5 +1,10 @@
 @import "code-highlights.css";
 
+body {
+    background: #121212;
+    color: #e6e6e6;
+}
+
 * {
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
