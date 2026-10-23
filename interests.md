@@ -1,5 +1,0 @@
----
-title:  "Interests"
-layout: interests
----
-

@@ -1,0 +1,39 @@
+<!-- run 'bundle exec jekyll serve' in bash/zsh to see changes before they are pushed -->
+
+<!DOCTYPE html>
+<html lang = 'en'>
+
+<head>
+    <meta charset = 'utf-8'/>
+    <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0'/>
+
+    <!-- For Jekyll to find 'web.css' -->
+    <link rel = 'stylesheet' href = '/assets/styles/web.css'>
+    <title> Alfred Zhao </title>
+    <link rel = 'icon' type = 'image/png' href = 'assets/images/...'>
+</head>
+
+<body>
+    
+    <div class = 'wrap'>
+
+        <div class = 'site-header'>
+            <!-- this href can't just be "index.html. when you go to a post and 
+            back Jekyll tries to go from the post to "index.html",
+            not root to "index.html". to get Jekyll to treat it as baseurl we 
+            prepend it with this filter. -->
+            <a class = 'blog-title' href = '/index.html'> Alfred Zhao </a>
+        </div>   
+
+    {% comment %} in _layouts/post.html {% endcomment %}
+{% if page.pdf %}
+  <iframe src = "{{ page.pdf | relative_url }}" title = "{{ page.title }}"></iframe>
+{% endif %}
+
+{{ content }}
+
+    </div>
+
+</body>
+
+</html>

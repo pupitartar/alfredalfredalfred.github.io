@@ -1,11 +1,11 @@
-<a href = "{{ include.href | relative.url}}"> {{ include.name }} </a>
+<!-- <a href = '{{ include.href | relative.url }}'> {{ include.name }} </a> -->
 
-<div class = "vertical-flexbox">
+<div class = 'post-list'>
     {% for post in include.collection %}
-        <div class = "caption"> 
-            <a href="{{ post.url }}"> {{ post.title }} </a>
-            <br>
-            <small> {{ post.date | date: "%b %-d, %Y" }} </small>
-        </div>
+        <a href = '{{ post.href }}' >
+            <small> [{{ post.type }}] </small>
+            {{ post.title }}
+            <span class = date> {{ post.date | date: '%-d %b, %Y' }} </span>
+        </a>
     {% endfor %}
 </div>

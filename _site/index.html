@@ -1,146 +1,50 @@
+<!-- run 'bundle exec jekyll serve' in bash/zsh to see changes before they are pushed -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang = 'en'>
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset = 'utf-8'/>
+    <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0'/>
 
-    <!-- Necessary for Jekyll to find web.css -->
-    <link rel="stylesheet" href= "/assets/styles/web.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Marcellus&display=swap" rel="stylesheet">
+    <!-- For Jekyll to find 'web.css' -->
+    <link rel = 'stylesheet' href = '/assets/styles/web.css'>
     <title> Alfred Zhao </title>
+    <link rel = 'icon' type = 'image/png' href = 'assets/images/...'>
 </head>
-<link rel = "icon" type = "image/png" href = assets/images/onigiri-favicon-192x192.png>
+
 <body>
+    
+    <div class = 'wrap'>
 
-    <div class = "module">
-        <!--This href can't just be "index.html because when you go to a post and 
-        then go back Jekyll tries to go from the path of the post to "index.html"
-        not from root to "index.html". To get Jekyll to treat it as baseurl I 
-        have to prepend it with this filter. -->
+        <div class = 'site-header'>
+            <!-- this href can't just be "index.html. when you go to a post and 
+            back Jekyll tries to go from the post to "index.html",
+            not root to "index.html". to get Jekyll to treat it as baseurl we 
+            prepend it with this filter. -->
+            <a class = 'blog-title' href = '/index.html'> Alfred Zhao </a>
+        </div>   
 
-        <a href = "/index.html"> Alfred Zhao </a>
-        <div class = "float-right">    
-            <a href = "/about.html"> About </a>   
-        </div>
+    <!-- <a href = ''>  </a> -->
+
+<div class = 'post-list'>
+    
+        <a href = 'assets/pdfs/alfred-drone-delivery-report.pdf' >
+            <small> [pdf] </small>
+            Last Mile Drone Delivery Industry Report
+            <span class = date> 5 Mar, 2024 </span>
+        </a>
+    
+        <a href = 'https://www.jokteur.com/a/integrated-timetable-switzerland/' >
+            <small> [link] </small>
+            Switzerland's Integrated Time Tables
+            <span class = date> 10 Jun, 2022 </span>
+        </a>
+    
+</div>
+
     </div>
-
-<div class = "horizontal-line"> </div>
-
-
-<div class = module>
-    <div class = "mt-5pct"></div>
-        <div class = "mb-5pct">
-            <!-- While pretty much all of the below code looks redundant and reducible unfortunately the way I have done it 
-it is not because I have to iterate through the image row and then do the caption row after, keeping the "row" div 
-outside of the for loop. -->
-
-<a href = "/writing.html"> Work </a>
-
-<div class = "vertical-flexbox">
-    
-            
-                <div class = "caption"> 
-                    <a href="/2024/02/01/using-python-to-visualize-brain-injuries.html"> Using Python to Visualize CTE Risk </a>
-                    <br>
-                    <small> Feb 1, 2024 </small>
-                </div>
-            
-    
-            
-                <div class = "caption"> 
-                    <a href="/2024/01/31/google-calendar-sync.html"> Google Calendar Sync </a>
-                    <br>
-                    <small> Jan 31, 2024 </small>
-                </div>
-            
-    
-            
-                <div class = "caption"> 
-                    <a href="/2024/01/12/why-degrowth-will-never-work.html"> Why "Degrowth" Will Never Work </a>
-                    <br>
-                    <small> Jan 12, 2024 </small>
-                </div>
-            
-    
-</div>
-    
-    <br> 
-    <br>
-
-<a href = "/interests.html"> Interests </a>
-
-<div class = "vertical-flexbox">
-    
-    
-            
-                <!--"post.href" accesses the url specified in the front matter of the post being rendered with 
-                    the "href" variable. This allows me to use the blog post format to directly href to external
-                    links, automating the process of putting in hrefs onto an html page conventionally. -->
-                <div class = "caption"> 
-                    <a href="https://neuro7.itch.io/epithet"> Epithet - Neuro </a>
-                    <br>
-                    <small> Dec 17, 2022 </small>
-                </div>
-            
-    
-            
-                <!--"post.href" accesses the url specified in the front matter of the post being rendered with 
-                    the "href" variable. This allows me to use the blog post format to directly href to external
-                    links, automating the process of putting in hrefs onto an html page conventionally. -->
-                <div class = "caption"> 
-                    <a href="https://www.youtube.com/watch?v=LAh-6envaro"> Ginzan Onsen </a>
-                    <br>
-                    <small> Nov 20, 2022 </small>
-                </div>
-            
-    
-            
-                <!--"post.href" accesses the url specified in the front matter of the post being rendered with 
-                    the "href" variable. This allows me to use the blog post format to directly href to external
-                    links, automating the process of putting in hrefs onto an html page conventionally. -->
-                <div class = "caption"> 
-                    <a href="https://www.jokteur.com/a/integrated-timetable-switzerland/"> Switzerland's Integrated Time Tables </a>
-                    <br>
-                    <small> Jun 10, 2022 </small>
-                </div>
-            
-    
-            
-    
-            
-    
-            
-    
-</div>
-
-        </div>
-    </div>
-</div>
-
-
-<div class = "horizontal-line"></div>
-
-<div class = "module">
-    <!--This href can't just be "index.html because when you go to a post and 
-    then go back Jekyll tries to go from the path of the post to "index.html"
-    not from root to "index.html". To get Jekyll to treat it as baseurl I 
-    have to prepend it with this filter. -->
-            <a href = "assets/pdfs/Alfred-Zhao-Resume.pdf" target = "_blank">
-                <img src = "/assets/images/cv-icon.svg" width="24" height="24"></img>
-            </a>
-            <a href = "https://www.linkedin.com/in/alfred-zhao-/" target = "_blank">
-                <img src = "/assets/images/linkedin-icon.svg" width="24" height="24"></img>
-            </a>   
-            <a href = "https://github.com/alfredalfredalfred" target = "_blank">
-                <img src = "/assets/images/github-mark.svg" width="24" height="24"></img>
-            </a>
-        <div class = "float-right">
-            <div class = "copyright"> ©️ Alfred Zhao, 2024 </div>
-        </div>
-</div>
 
 </body>
+
 </html>

@@ -1,202 +1,88 @@
+/* run 'bundle exec jekyll serve' in bash/zsh to see changes before they are pushed  */
+
 @import "code-highlights.css";
 
+:root {
+    --color-bg: rgba(0, 0, 0);
+    --color-text: rgba(255, 255, 255);
+    --color-accent: rgba(200, 225, 255);
+    --color-alt: rgb(255, 200, 200);
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --content-width: 40rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-    background: #121212;
-    color: #e6e6e6;
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
-* {
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box;
+.wrap {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
 }
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/assets/fonts/montserrat/Montserrat-Light.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+.site-header {
+  background-color: var(--color-surface);
+    padding-block: 1rem;
 }
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/assets/fonts/montserrat/Montserrat-Medium.ttf') format('truetype');
-    font-weight: bold;
-    font-style: bold;
+.site-header .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
 }
 
-.module {
-    color: #000;
-    font-size: 1.5rem;
-    padding: 1% 20% 1% 20%; /* Default styles assumed to be for larger screens */
+.blog-title {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  text-decoration: none;
 }
 
-  
-/* Media query for mobile devices */
-@media (max-width: 600px) {
-    .module {
-      font-size: 1.25rem; /* Slightly smaller font size for mobile */
-      padding: 1% 0% 1% 0%; /* Reduced padding for mobile screens */
-    }
+.site-nav a {
+  color: var(--color-text);
+  text-decoration: none;
 }
 
-.float-right {
-    float: right;
-    margin-left: 2.5%;
+.post-list {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
 }
 
-.post {
-    color: #000;
+.post-list li + li {
+  border-top: 1px solid var(--color-border);
 }
 
-/* From ".gallery" to ___ is where I have the "flex-box" way of organizing modules into a gallery */
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap; /* This allows items to wrap onto the next line */
-    justify-content: space-between; /* Spreads items evenly */
-    padding: 1rem 0;
-}
-
-.vertical-flexbox {
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; This allows items to wrap onto the next line */
-    /* justify-content: space-between; Spreads items evenly */
-    padding: 0rem 0; 
-}
-
-.post-component {
-    height: 30vw;
-    width: 25vw;
-    margin: 0rem 0rem 2rem 0rem;
-}
-
-.box {
-    height: 25vw;
-    width: 25vw;
-    overflow: hidden; /* Ensures that if a portrait style picture is longer than the box (on y-axis) that the overflow is hidden */
-    text-align: justify;
-}
-
-.box img {
-    width: 100%;
-
-    /* Having object-fit: cover; and width AND height both set to 100% makes it so the image is cropped and center vertically and horizontally.*/
-    
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 50%;
-    transition: .25s;
-}
-.box img:hover {
-    opacity: 100%;
-}
-
-@media (max-width: 600px) {
-    .box {
-        display: grid;
-        place-items: center; /* Centers items both horizontally and vertically */
-        height: 97.5vw;
-        width: 95.5vw;
-        overflow: hidden; /* Ensures that if a portrait style picture is longer than the box (on y-axis) that the overflow is hidden */
-    }
-}
-
-
-/* you NEED to have the "img" after the class name in order to use this to override prior opacity behavior */
-.img-no-hover img {
-    width: 100%;
-
-    /* Having object-fit: cover; and width AND height both set to 100% makes it so the image is cropped and center vertically and horizontally.*/
-    
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 100%;
-}
-
-.caption {
-    color: #000;
-    font-size: 1rem;
-    padding: 2.5% 0% 0% 0%;
-}
-/* Media query for mobile devices */
-@media (max-width: 600px) {
-    .caption {
-        color: #000;
-        font-size: .75rem;
-        padding: 4% 0% 0% 0%;
-    }
-}
-
-.row {
-    display: flex;
-  }
-
-.blog-hero {
-    color: #000;
-    font-size: 1rem;
-    padding: 5% 0% 0% 0%;
-    line-height: 1.5; 
-}
-
-.blog-hero img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+.post-list a {
+  display: block;
+  padding-block: 0.9rem;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  text-decoration: none;
 }
 
 a {
     text-decoration: none;
-    color: #000;
+    color: var(--color-text);
 }
+
 a:hover {
-    color: rgba(192, 228, 255, 1);
+    color: var(--color-accent);
 }
 
-/* Margin classes */
-
-.margin-bottom {
-    margin-bottom: 2.5%; /* Adjust the value as needed */
-}
-
-.mb-1pct {
-    margin-bottom: 1%; /* Adjust the value as needed */
-}
-
-.mb-5pct {
-    margin-bottom: 5%; /* Adjust the value as needed */
-}
-
-.mb-2-5pct {
-    margin-bottom: 2.5%; /* Adjust the value as needed */
-}
-  
-.mt-5pct {
-    margin-top: 5%; /* Adjust the value as needed */ 
-}
-
-.horizontal-line {
-    border-top: 1px solid grey;
-    opacity: 25%;
-    height: 1px;
-    width: 60%;
-    margin: 0 auto;
-}
-
-/* Media query for mobile devices */
-@media (max-width: 600px) {
-    .horizontal-line {
-        border-top: 1px solid grey;
-        opacity: 25%;
-        height: 1px;
-        width: 100%;
-        margin: 0 auto;
-    }
-}
-
-.copyright {
-    font-size: .75rem;
+.date {
+    color: var(--color-alt);
+    font-size: smaller;
 }
